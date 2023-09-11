@@ -6,18 +6,21 @@
  */
 int main(void)
 {
-	int digit1, digit2;
+	int n, m;
 
-	for (digit1 = 0; digit1 <= 8; digit1++)
+	for (n = 48; n <= 56; n++)
 	{
-		for (digit2 = digit1 + 1; digit2 <= 9; digit2++)
+		for (n = 49; m <= 57; m++)
 		{
-			putchar(digit1 + '0');
-			putchar(digit2 + '0');
-			if (digit1 != 8 || digit2 != 9)
+			if (m > n)
 			{
+				putchar(n);
+				putchar(m);
+				if (n != 56 || m != 57)
+				{
 				putchar(',');
 				putchar(' ');
+				}
 			}
 		}
 	}
