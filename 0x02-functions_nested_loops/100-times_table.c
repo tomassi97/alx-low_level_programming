@@ -27,17 +27,19 @@ void print_times_table(int n)
 
 					if (result < 10)
 					{
-						_putchar(' ');
-						_putchar(' ');
+						_putchar(' '); // Extra space added here
 					}
 					else if (result < 100)
 					{
 						_putchar(' ');
 					}
 
-					_putchar(result / 100 + '0');
-					_putchar((result / 10) % 10 + '0');
-					_putchar(result % 10 + '0');
+					if (result < 10)
+					{
+						_putchar(' '); // Extra space added here
+					}
+
+					_putchar(result + '0');
 				}
 			}
 			_putchar('\n');
