@@ -3,21 +3,21 @@
 /**
  * main - Entry point
  *
- * Return: Always 0 (Success)
+ * Return: Always 0
  */
 int main(void)
 {
-    unsigned long long int a = 1, b = 2, next;
+    unsigned long int a = 1, b = 2, c;
     int count;
 
-    printf("%llu, %llu", a, b);
+    printf("%lu, %lu", a, b);
 
     for (count = 3; count <= 98; count++)
     {
-        next = a + b;
-        printf(", %llu", next);
+        c = a + b;
+        printf(", %lu", c);
         a = b;
-        b = next;
+        b = c;
     }
 
     printf("\n");
