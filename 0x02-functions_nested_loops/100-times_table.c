@@ -1,46 +1,32 @@
-#include "main.h"
+#include <stdio.h>
 
-/**
- * print_times_table - Prints the n times table, starting with 0.
- * @n: The times table to be printed (0 <= n <= 15).
- */
-void print_times_table(int n)
-{
-    if (n >= 0 && n <= 15)
-    {
-        int i, j, result;
-
-        for (i = 0; i <= n; i++)
-        {
-            for (j = 0; j <= n; j++)
-            {
-                result = i * j;
-
-                if (j == 0)
-                {
-                    _putchar('0');
-                }
-                else
-                {
-                    _putchar(',');
-                    _putchar(' ');
-
-                    if (result < 10)
-                    {
-                        _putchar(' '); // Extra space added here
-                        _putchar(' '); // Extra space added here
-                    }
-                    else if (result < 100)
-                    {
-                        _putchar(' ');
-                    }
-
-                    _putchar((result / 100) + '0');
-                    _putchar(((result / 10) % 10) + '0');
-                    _putchar((result % 10) + '0');
-                }
-            }
-            _putchar('\n');
-        }
+void print_times_table(int n) {
+    if (n < 0 || n > 15) {
+        return; // Don't print anything if n is out of range.
     }
+
+    for (int i = 0; i <= n; i++) {
+        for (int j = 0; j <= n; j++) {
+            int result = i * j;
+
+            // Format the output to align the numbers properly.
+            if (j == 0) {
+                printf("%d", result);
+            } else {
+                printf(",%4d", result); // Adjust the width as needed.
+            }
+        }
+        printf("\n");
+    }
+}
+
+int main(void) {
+    print_times_table(3);
+    printf("\n");
+    print_times_table(5);
+    printf("\n");
+    print_times_table(98); // Out of range, won't print anything.
+    printf("\n");
+    print_times_table(12);
+    return 0;
 }
