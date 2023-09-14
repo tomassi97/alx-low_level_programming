@@ -2,11 +2,9 @@
 
 /**
  * main - Causes an infinite loop
- *
- * This function demonstrates an infinite loop and then avoids it.
- *
- * Return: Always 0 (success)
+ * Return: 0
  */
+
 int main(void)
 {
 	int i;
