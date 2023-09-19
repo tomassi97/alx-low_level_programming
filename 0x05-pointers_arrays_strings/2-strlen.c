@@ -1,16 +1,16 @@
-#include "main.h"
-
+#include "holberton.h"
 /**
- *swap_int - swaps argument ints.
- *@a: first argument.
- *@b: secnd argument.
- */
-
-void swap_int(int *a, int *b)
+  * _strlen - length of a string
+  * @s: input char
+  * Return: length of a string
+**/
+int _strlen(char *s)
 {
-	int temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
+int length = 0;
+while (*s != '\0')
+{
+s++;
+length++;
+}
+return (length);
 }
