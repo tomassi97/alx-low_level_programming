@@ -1,18 +1,27 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * main - check the code for
+ * leet - change vowels to numbers.
+ * @s: analized string.
  *
- * Return: Always 0.
+ * Return: String with all vowels changed.
  */
-int main(void)
+char *leet(char *s)
 {
-    char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
-    char *p;
+	char a[] = "aeotlAEOTL";
+	char n[] = "4307143071";
+	int i = 0;
+	int j;
 
-    p = leet(s);
-    printf("%s", p);
-    printf("%s", s);
-    return (0);
+	while (*(s + i) != '\0')
+	{
+		for (j = 0; j <= 9; j++)
+		{
+			if (*(s + i) == a[j])
+			{
+				*(s + i) = n[j];
+			}
+		}
+		i++;
+	}
+	return (s);
 }
