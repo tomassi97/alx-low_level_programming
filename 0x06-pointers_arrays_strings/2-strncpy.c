@@ -1,29 +1,30 @@
 #include "main.h"
 
 /**
- * custom_strncat - Concatenate strings up to a specified length.
- * @dest: String to concatenate to.
- * @src: String to concatenate.
- * @n: Maximum length to concatenate.
- * Return: A pointer to the concatenated string.
- */
-char *custom_strncat(char *dest, char *src, int n)
+ * _strncpy - copies a string.
+ * @dest: destination argument.
+ * @src: source argument.
+ * @n: number of max bytes to copy.
+ * Return: retirns (dest)pointer to destination.
+*/
+
+char *_strncpy(char *dest, char *src, int n)
 {
-	int dest_len = 0;
-	int src_len = 0;
+	char *home = dest;
+	int index;
 
-	while (dest[dest_len] != '\0')
-		dest_len++;
-
-	while (src[src_len] != '\0' && dest_len < 97 && src_len < n)
+	for (index = 0; index < n; index++)
 	{
-		dest[dest_len] = src[src_len];
-		dest_len++;
-		src_len++;
+		if (*src != '\0')
+		{
+			*home = *src;
+			src++;
+		}
+		else
+		{
+			*home = '\0';
+		}
+		home++;
 	}
-
-	dest[dest_len] = '\0';
-
-	return dest;
+	return (dest);
 }
-
