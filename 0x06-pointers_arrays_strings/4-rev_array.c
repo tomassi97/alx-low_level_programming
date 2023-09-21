@@ -1,25 +1,23 @@
 #include "main.h"
 
 /**
- * _strcmp - compartes string.
- * @s1: argument 1.
- * @s2: argument 2.
- * Return: difference.
+ * reverse_array - reverses aray of intagers.
+ * @a: array to verese.
+ * @n: the number of ellements to reverse
 */
 
-int _strcmp(char *s1, char *s2)
+void reverse_array(int *a, int n)
 {
-	int difference = 0;
+	int start;
+	int end;
+	int temp;
 
-	while (*s1 != '\0' && *s2 != '\0')
+
+
+	for (start = 0, end = n - 1; start < end; start++, end--)
 	{
-		if (*s1 != *s2)
-		{
-			difference = (*s1 - *s2);
-			return (difference);
-		}
-		s1++;
-		s2++;
+		temp = a[start];
+		a[start] =  a[end];
+		a[end] = temp;
 	}
-	return (difference);
 }
