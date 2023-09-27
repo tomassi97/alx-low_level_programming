@@ -20,7 +20,7 @@ int _pow_recursion(int x, int y)
 		/* Compute power recursively */
 		return (x * _pow_recursion(x, y - 1));
 	}
-	
+
 	/* Base case for y = 0 */
 	return (1);
 }
