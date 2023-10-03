@@ -1,50 +1,43 @@
 #include "main.h"
-
 /**
- * argstostr - concantinates all args of a program
- * @ac: argc
- * @av: argv
- * Return: pointer to new string.
+ * argstostr - prints args
+ * @ac: takes in width of grid
+ * @av: height of grid
+ * Return: the args one line at a time
  */
 
 char *argstostr(int ac, char **av)
 {
-	int count;
-	int post;
-	int len = 0, len2 = 0, lenTotal = 0;
-	char *args;
+	char *str;
+	int count = 0, a = 0, b = 0, c = 0;
 
 	if (ac == 0 || av == NULL)
+		return (NULL);
+	while (a < ac)
+	{
+		b = 0;
+		while (av[a][b] != '\0')
+		{
+			count++;
+			b++;
+		}
+		a++;
+	}
+	count = count + ac + 1;
+	str = malloc(sizeof(char) * count);
+	if (str == NULL)
 	{
 		return (NULL);
 	}
-	for (count = 0; count < ac; count++)
+	for (a = 0; a < ac; a++)
 	{
-		for (len = 0; av[count][len] != '\0'; len++)
+		for (b = 0; av[a][b] != '\0'; b++)
 		{
-			lenTotal++;
+			str[c] = av[a][b];
+			c++;
 		}
-		lenTotal++;
+		str[c] = '\n';
+		c++;
 	}
-
-	args = (char *)malloc(lenTotal + 1);
-
-	if (args == NULL)
-	{
-		return (NULL);
-	}
-
-	for (count = 0; count < ac; count++)
-	{
-		while (av[count][len2] != '\0')
-		{
-			args[post] = av[count][len2];
-			post++;
-			len2++;
-		}
-			args[post] = '\n';
-			post++;
-	}
-	args[post] = '\0';
-	return (args);
+	return (str);
 }
